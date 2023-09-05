@@ -18,7 +18,7 @@ return new class extends Migration
             $table->boolean('is_completed')->default(false);
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('company_id')->references('id')->on('companies');
-            $table->dateTime('start_at');
+            $table->dateTime('start_at')->useCurrent();
             $table->dateTime('expired_at')->nullable();
             $table->timestamps();
 
